@@ -5,14 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shop.co</title>
-  <link rel="stylesheet" href="./main.css" />
+  <link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
+  <main>
   <aside class="signup-banner">
     <p class="signup-banner__text">
       Sign up and get 20% off to your first order.
-      <a href="#" class="signup-banner__link">Sign Up Now</a>
+      <a href="" class="signup-banner__link">Sign Up Now</a>
     </p>
 
     <button type="button" class="signup-banner__close-btn">&times;</button>
@@ -25,10 +26,10 @@
 
       <ul class="site-header__menu">
         <li class="site-header__menu-item">
-          <a href="" class="site-header__link">Shop</a>
+          <a href="product.html" class="site-header__link">Shop</a>
         </li>
         <li class="site-header__menu-item">
-          <a href="" class="site-header__link">On Sale</a>
+          <a href="cart.html" class="site-header__link">On Sale</a>
         </li>
         <li class="site-header__menu-item">
           <a href="" class="site-header__link">New Arrival</a>
@@ -44,8 +45,8 @@
       </div>
 
       <div class="site-header__actions">
-        <a href=""><img src="/assets/icons/cart.png" alt="Go to cart" /></a>
-        <a href=""><img src="/assets/icons/account.png" alt="Account Login" /></a>
+        <a href="login.html"><img src="/assets/icons/cart.png" alt="Go to cart" /></a>
+        <a href="cart.html"><img src="/assets/icons/account.png" alt="Account Login" /></a>
       </div>
     </nav>
   </header>
@@ -108,7 +109,7 @@
     <div class="product-section__container">
 
 
-      <article class="product-card">
+      <article class="product-card" id="1">
         <div class="product-card_image-wrapper">
           <image src="/assets/images/products/product1.png" alt="productimage"></image>
         </div>
@@ -138,7 +139,7 @@
       </article>
 
 
-      <article class="product-card">
+      <article class="product-card" id="2">
         <div class="product-card__image-wrapper">
           <img src="/assets/images/products/product2.png" alt="" class="product-card__image" />
         </div>
@@ -159,7 +160,7 @@
       </article>
 
 
-      <article class="product-card">
+      <article class="product-card" id="3">
         <div clas="product-card_image">
           <image src="/assets/images/products/product3.png" alt="productimage"></image>
         </div>
@@ -176,7 +177,7 @@
         </div>
       </article>
 
-      <article class="product-card">
+      <article class="product-card" id="4">
         <div class="product-card_image-wrapper">
           <image src="/assets/images/products/product4.png" alt="productimage"></image>
         </div>
@@ -206,13 +207,13 @@
     <h2 class="product-section2__title">TOP SELLING</h2>
     <div class="product-section2__container">
 
-      <article class="product-card">
+      <article class="product-card" id="5">
         <div class="product-card__image-wrapper">
           <img src="/assets/images/products/product5.png" alt="T-shirt with Tape Details" class="product-card__image" />
         </div>
 
         <h3 class="product-card__name">
-          T-shirt with Tape Details
+          Vertical Striped Shirt
         </h3>
 
         <div class="product-card__rating">
@@ -228,7 +229,7 @@
         <div class="product-card__pricing">
 
           <span class="product-card__price">
-            $120
+            $212
           </span>
 
         </div>
@@ -237,13 +238,13 @@
 
 
 
-      <article class="product-card">
+      <article class="product-card" id="6">
         <div class="product-card__image-wrapper">
           <img src="/assets/images/products/product6.png" alt="T-shirt with Tape Details" class="product-card__image" />
         </div>
 
         <div class="product-card__content">
-          <h3 class="product-card__name">Skinny Fit Jeans</h3>
+          <h3 class="product-card__name">Courage Graphic T-Shirt</h3>
 
           <div class="product-card__rating">
             <span class="product-card__stars"> ★★★★★ </span>
@@ -252,43 +253,43 @@
           </div>
 
           <div class="product-card__pricing">
-            <span class="product-card__price"> $240 </span>
+            <span class="product-card__price"> $145 </span>
           </div>
         </div>
       </article>
 
 
 
-      <article class="product-card">
+      <article class="product-card" id="7">
         <div class="product-card_image-wrapper">
           <img src="/assets/images/products/product7.png" alt="productimage"></img>
         </div>
 
         <div class="product-card__content">
-          <h3>CHECKERED SHIRT</h3>
+          <h3>Loose Fit Bermuda Shorts</h3>
           <div class="product-card__rating">
             <span class="product-card__stars"> ★★★★★ </span>
             <span class="product-card__rating-value"> 4.5/5 </span>
           </div>
           <div class="product-card__pricing">
-            <span class="product-card__price"> $180 </span>
+            <span class="product-card__price"> $80 </span>
           </div>
         </div>
       </article>
 
-      <article class="product-card">
+      <article class="product-card" id="8">
         <div class="product-card_image-wrapper">
           <img src="/assets/images/products/product8.png" alt="productimage"></img>
         </div>
 
         <div class="product-card__content">
-          <h3>Sleeve Stirped T-ShirtT</h3>
+          <h3>Faded Skinny Jeans</h3>
           <div class="product-card__rating">
             <span class="product-card__stars"> ★★★★★ </span>
             <span class="product-card__rating-value"> 4.5/5 </span>
           </div>
           <div class="product-card__pricing">
-            <span class="product-card__price"> $180 </span>
+            <span class="product-card__price"> $210 </span>
           </div>
         </div>
 
@@ -479,17 +480,10 @@
     </div>
 
   </section>
-</body>
 
+  </main>
 
-
-  <!-- =========================
-     FOOTER
-========================== -->
-
-
-
-<footer class="site-footer">
+  <footer class="site-footer">
 
   <div class="site-footer__container">
 
@@ -721,5 +715,11 @@
   </div>
 
 </footer>
+<script src="/js/product.js"></script>
+<script src="/js/productdetails.js"></script>
+</body>
 
 </html>
+
+
+

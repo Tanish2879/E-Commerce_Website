@@ -324,6 +324,9 @@
     }
 }
 
+.product-card{
+    cursor: pointer;
+}
 
 // style
 
@@ -763,14 +766,11 @@
 .site-footer__payments {
     display: flex;
     align-items: center;
-
     gap: 6px;
 }
 
 .site-footer__payment {
-    width: 30px;
-    height: 18px;
-
+   
     object-fit: contain;
 
     background-color: #ffffff;
