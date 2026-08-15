@@ -182,13 +182,6 @@
             border-right: none;
         }
         h3{
-            // font-family: Satoshi;
-            // font-weight: 700;
-            // font-style: Bold;
-            // font-size: 40px;
-            // line-height: 100%;
-            // letter-spacing: 0%;
-            // vertical-align: middle;
 
             margin: 0;
             font-size: 30px;
@@ -249,4 +242,538 @@
         // padding: 44px 100px;
 
     }
+}
+
+
+
+//product cards 
+
+
+.product-section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &__title{
+        position: absolute;
+        top:60px;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 100%;
+        height: 50px;
+      
+    }
+
+
+    &__container{
+
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-top: 140px;
+        gap:25px;
+
+    }
+
+    a{
+        position: absolute;
+        top: 100%;                  
+        left: 50%;                 
+        transform: translate(-50%, -50%);
+        margin-top:65px;
+    }
+}
+
+
+.product-section2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &__title{
+        position: absolute;
+        top:160px;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 100%;
+        height: 50px;
+      
+    }
+
+
+    &__container{
+
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-top: 240px;
+        gap:25px;
+
+    }
+
+    a{
+        position: absolute;
+        top: 100%;                  
+        left: 50%;                 
+        transform: translate(-50%, -50%);
+        margin-top:65px;
+    }
+}
+
+
+// style
+
+.dress-style {
+    width: 100%;
+    padding: 40px 0;
+    background-color: #ffffff;
+
+    &__container {
+        width: calc(100% - 32px);
+        max-width: 1080px;
+        margin:80px 100px;
+        padding: 30px 24px;
+        background-color: #f2f0f1;
+        border-radius: 16px;
+    }
+
+    &__title {
+        margin: 0 0 24px;
+        color: #000000;
+        font-size: 26px;
+        font-weight: 900;
+        line-height: 1;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: -0.8px;
+    }
+
+    &__grid {
+        display: grid;
+        /* FIXED: Changed from 108px to 190px or 240px so models/dresses are actually visible */
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 240px); 
+        gap: 16px; /* Slightly wider gap looks cleaner for cards */
+    }
+
+    &__card {
+        position: relative;
+        width: 100%;       /* FIXED: Forces card to fill its grid slot width */
+        height: 100%;      /* FIXED: Forces card to fill its grid slot height */
+        overflow: hidden;
+        border-radius: 12px; /* Standard card curve */
+        background-color: #ffffff;
+        
+        /* Modifiers integrated inside the nesting */
+        &--casual {
+            grid-column: 1;
+            grid-row: 1;
+            .dress-style__image { object-position: center 20%; } /* Higher crop for portrait look */
+        }
+
+        &--formal {
+            grid-column: 2 / 4;
+            grid-row: 1;
+            .dress-style__image { object-position: center 30%; } /* Wide landscape card crop */
+        }
+
+        &--party {
+            grid-column: 1 / 3;
+            grid-row: 2;
+            .dress-style__image { object-position: center 30%; } /* Wide landscape card crop */
+        }
+
+        &--gym {
+            grid-column: 3;
+            grid-row: 2;
+            .dress-style__image { object-position: center 15%; } /* Higher crop for vertical fitness photos */
+        }
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover; /* Keeps aspect ratio clean */
+        z-index: 1;
+    }
+
+    &__name {
+        position: absolute;
+        top: 20px;   /* Clean padding from top */
+        left: 24px;  /* Clean padding from left */
+        z-index: 2;
+        margin: 0;
+        color: #000000;
+        font-size: 18px; /* Slightly larger for design hierarchy */
+        font-weight: 700;
+        line-height: 1;
+        pointer-events: none;
+    }
+}
+
+
+.testimonials{
+    width: 100%;
+    height: 480px;
+
+    &__container{
+        margin: 0 auto;
+        width: 1180px;
+
+    }
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title{
+        margin:0;
+        color:v.$colorblack;
+        font-size: 48px;
+        font-weight: 900;
+        line-height: 1;
+    }
+
+    &__controls{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    &__controls{
+        border:none;
+        cursor: pointer;
+        &:hover{
+            opacity: 0.55;
+        }
+    }
+
+    
+}
+
+.testimonials_list{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 40px;
+
+    }
+
+.testimonial-card {
+    height: 240px;
+    width: 400px;
+    // background-color: #ffffff;
+    border: 2px solid #c4c2c2;
+    border-radius: 12px;
+    padding: 28px 32px;
+    // display: block;
+    align-items: center;
+    gap:5px
+    // justify-content: space-between;
+
+    &__customer{
+        display: flex;
+        align-items: center;
+    }
+
+
+    &__stars{
+    color: #ffc633;
+    font-size: 22px;
+
+    }
+
+    &__name{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    &__verified{
+    
+    color: #ffffff;
+    background-color: #00a67d;
+
+    width: 12px;
+    height: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 8px;
+
+    }
+
+    &__review{
+        margin-top: 12px;
+         color: #666666;
+         line-height: 1.4;
+
+    }
+
+}
+
+
+.newsletter{
+    width: 100%;
+    height: 300px;
+
+    &__container{
+        width: auto;
+        height: 180px;
+        margin: 0 100px 0 100px;
+        background-color: v.$colorblack;
+        color: v.$colorwhite;
+        border-radius: 30px;
+        padding: 43px 0 43px 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 200px;
+    }
+
+    &__title{
+        width: 90%;
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 1;
+    }
+
+
+}
+
+.newsletter__form {
+    width: 450px;
+    margin-right: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.newsletter__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+   
+}
+.newsletter__input {
+    width: 100%;
+    height: 38px;
+    padding: 0 14px;
+    border: none;
+    border-radius: 20px;
+
+    background-color: #ffffff;
+
+    font-size: 8px;
+
+    outline: none;
+}
+
+.newsletter__input::placeholder {
+    color: #999999;
+    font-size: 12px;
+    padding-left: 5px;
+}
+
+.newsletter__button {
+    width: 100%;
+    height: 38px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.newsletter__button:hover {
+    background-color: #eeeeee;
+}
+
+
+.site-footer {
+    width: 100%;
+    height: auto;
+
+    padding: 30px 0 15px;
+
+    background-color: #f2f0f1;
+
+    color: #000000;
+}
+
+.site-footer__container {
+    width: calc(100% - 72px);
+    max-width: 1180px;
+
+    margin: 0 auto;
+}
+
+/* --------------------------------
+   Main Footer
+-------------------------------- */
+
+.site-footer__main {
+    display: grid;
+
+    grid-template-columns: 1.8fr repeat(4, 1fr);
+
+    gap: 40px;
+
+    padding-bottom: 25px;
+}
+
+/* --------------------------------
+   Brand
+-------------------------------- */
+
+.site-footer__logo {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: #000000;
+
+    font-size: 20px;
+    font-weight: 900;
+
+    text-decoration: none;
+}
+
+.site-footer__description {
+    max-width: 220px;
+
+    margin: 0;
+
+    color: #666666;
+
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+/* --------------------------------
+   Social Icons
+-------------------------------- */
+
+.site-footer__social {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.site-footer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background-color: #ffffff;
+}
+
+.site-footer__social-link img {
+    width: 10px;
+    height: 10px;
+
+    object-fit: contain;
+}
+
+/* --------------------------------
+   Footer Columns
+-------------------------------- */
+
+.site-footer__column {
+    min-width: 0;
+}
+
+.site-footer__heading {
+    margin: 0 0 14px;
+
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.site-footer__links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.site-footer__link {
+    color: #666666;
+
+    font-size: 8px;
+
+    text-decoration: none;
+}
+
+.site-footer__link:hover {
+    color: #000000;
+}
+
+/* --------------------------------
+   Bottom Footer
+-------------------------------- */
+
+.site-footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #dddddd;
+}
+
+.site-footer__copyright {
+    margin: 0;
+
+    color: #999999;
+
+    font-size: 7px;
+}
+
+.site-footer__payments {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.site-footer__payment {
+    width: 30px;
+    height: 18px;
+
+    object-fit: contain;
+
+    background-color: #ffffff;
+
+    border-radius: 3px;
 }

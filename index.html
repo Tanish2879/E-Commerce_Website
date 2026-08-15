@@ -1,184 +1,725 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shop.co</title>
-    <link rel="stylesheet" href="./main.css" />
-  </head>
-  <body>
-    <aside class="signup-banner">
-      <p class="signup-banner__text">
-        Sign up and get 20% off to your first order.
-        <a href="#" class="signup-banner__link">Sign Up Now</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop.co</title>
+  <link rel="stylesheet" href="./main.css" />
+</head>
+
+<body>
+  <aside class="signup-banner">
+    <p class="signup-banner__text">
+      Sign up and get 20% off to your first order.
+      <a href="#" class="signup-banner__link">Sign Up Now</a>
+    </p>
+
+    <button type="button" class="signup-banner__close-btn">&times;</button>
+  </aside>
+
+  <header class="site-header">
+    <nav class="site-header__nav">
+      <a href="index.html" class="site-header__logo-link"><img src="/assets/images/SHOP.CO.png" alt="Shop.co Logo "
+          class="site-header__logo" /></a>
+
+      <ul class="site-header__menu">
+        <li class="site-header__menu-item">
+          <a href="" class="site-header__link">Shop</a>
+        </li>
+        <li class="site-header__menu-item">
+          <a href="" class="site-header__link">On Sale</a>
+        </li>
+        <li class="site-header__menu-item">
+          <a href="" class="site-header__link">New Arrival</a>
+        </li>
+        <li class="site-header__menu-item">
+          <a href="" class="site-header__link">Brands</a>
+        </li>
+      </ul>
+
+      <div class="site-header__search">
+        <img src="/assets/icons/search.png" alt="Search Icon" class="site-header__search-icon" />
+        <input type="search" placeholder="Search for products..." class="site-header__search-input" />
+      </div>
+
+      <div class="site-header__actions">
+        <a href=""><img src="/assets/icons/cart.png" alt="Go to cart" /></a>
+        <a href=""><img src="/assets/icons/account.png" alt="Account Login" /></a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero__content">
+      <h1 class="hero__title">FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
+
+      <p class="hero__subtitle">
+        Browse through our diverse range of meticulously crafted garments,
+        designed to bring out your individuality and cater to your sense of
+        style.
       </p>
 
-      <button type="button" class="signup-banner__close-btn">&times;</button>
-    </aside>
+      <button type="button" class="hero__cta-btn">Shop Now</button>
 
-    <header class="site-header">
-      <nav class="site-header__nav">
-        <a href="index.html" class="site-header__logo-link"
-          ><img
-            src="/assets/images/SHOP.CO.png"
-            alt="Shop.co Logo "
-            class="site-header__logo"
-        /></a>
+      <div class="hero__statistics">
+        <div class="hero__stats">
+          <h3>200K+</h3>
+          <p>International Brands</p>
+        </div>
+        <div class="hero__stats">
+          <h3>2,000+</h3>
+          <p>High Quality Products</p>
+        </div>
+        <div class="hero__stats">
+          <h3>30,000+</h3>
+          <p>Happy Customers</p>
+        </div>
+      </div>
+    </div>
 
-        <ul class="site-header__menu">
-          <li class="site-header__menu-item">
-            <a href="" class="site-header__link">Shop</a>
-          </li>
-          <li class="site-header__menu-item">
-            <a href="" class="site-header__link">On Sale</a>
-          </li>
-          <li class="site-header__menu-item">
-            <a href="" class="site-header__link">New Arrival</a>
-          </li>
-          <li class="site-header__menu-item">
-            <a href="" class="site-header__link">Brands</a>
-          </li>
-        </ul>
+    <div class="hero-image">
+      <img src="/assets/images/Rectangle 2.png" alt="Hero Image " class="hero__image" />
+    </div>
+  </section>
 
-        <div class="site-header__search">
-          <img
-            src="/assets/icons/search.png"
-            alt="Search Icon"
-            class="site-header__search-icon"
-          />
-          <input
-            type="search"
-            placeholder="Search for products..."
-            class="site-header__search-input"
-          />
+  <section class="brands-showing">
+    <div class="brands-showing__list">
+      <span class="brands-showing__item">
+        <img src="/assets/images/versace.png" alt="Brand 1" />
+      </span>
+      <span class="brands-showing__item">
+        <img src="/assets/images/zara.png" alt="Brand 2" />
+      </span>
+      <span class="brands-showing__item">
+        <img src="/assets/images/gucci.png" alt="Brand 3" />
+      </span>
+      <span class="brands-showing__item">
+        <img src="/assets/images/prada.png" alt="Brand 4" />
+      </span>
+      <span class="brands-showing__item">
+        <img src="/assets/images/calvinklein.png" alt="Brand 5" />
+      </span>
+    </div>
+  </section>
+
+  <section class="product-section">
+    <h2 class="product-section__title">NEW ARRIVALS</h2>
+    <div class="product-section__container">
+
+
+      <article class="product-card">
+        <div class="product-card_image-wrapper">
+          <image src="/assets/images/products/product1.png" alt="productimage"></image>
         </div>
 
-        <div class="site-header__actions">
-          <a href=""><img src="/assets/icons/cart.png" alt="Go to cart" /></a>
-          <a href=""
-            ><img src="/assets/icons/account.png" alt="Account Login"
-          /></a>
+        <h3 class="product-card__name">
+          T-shirt with Tape Details
+        </h3>
+
+        <div class="product-card__rating">
+          <span class="product-card__stars">
+            ★★★★★
+          </span>
+
+          <span class="product-card__rating-value">
+            4.5/5
+          </span>
         </div>
-      </nav>
-    </header>
 
-    <section class="hero">
-      <div class="hero__content">
-        <h1 class="hero__title">FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
+        <div class="product-card__pricing">
 
-        <p class="hero__subtitle">
-          Browse through our diverse range of meticulously crafted garments,
-          designed to bring out your individuality and cater to your sense of
-          style.
+          <span class="product-card__price">
+            $120
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article class="product-card">
+        <div class="product-card__image-wrapper">
+          <img src="/assets/images/products/product2.png" alt="" class="product-card__image" />
+        </div>
+
+        <div class="product-card__content">
+          <h3 class="product-card__name">Skinny Fit Jeans</h3>
+
+          <div class="product-card__rating">
+            <span class="product-card__stars"> ★★★★★ </span>
+
+            <span class="product-card__rating-value"> 3.5/5 </span>
+          </div>
+
+          <div class="product-card__pricing">
+            <span class="product-card__price"> $240 </span>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="product-card">
+        <div clas="product-card_image">
+          <image src="/assets/images/products/product3.png" alt="productimage"></image>
+        </div>
+
+        <div class="product-card__content">
+          <h3>CHECKERED SHIRT</h3>
+          <div class="product-card__rating">
+            <span class="product-card__stars"> ★★★★★ </span>
+            <span class="product-card__rating-value"> 4.5/5 </span>
+          </div>
+          <div class="product-card__pricing">
+            <span class="product-card__price"> $180 </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card_image-wrapper">
+          <image src="/assets/images/products/product4.png" alt="productimage"></image>
+        </div>
+
+        <div class="product-card__content">
+          <h3>Sleeve Stirped T-ShirtT</h3>
+          <div class="product-card__rating">
+            <span class="product-card__stars"> ★★★★★ </span>
+            <span class="product-card__rating-value"> 4.5/5 </span>
+          </div>
+          <div class="product-card__pricing">
+            <span class="product-card__price"> $180 </span>
+          </div>
+        </div>
+      </article>
+
+      <a href="">View all</a>
+
+
+    </div>
+  </section>
+
+  <!-- TOP SELLING -->
+
+
+  <section class="product-section2">
+    <h2 class="product-section2__title">TOP SELLING</h2>
+    <div class="product-section2__container">
+
+      <article class="product-card">
+        <div class="product-card__image-wrapper">
+          <img src="/assets/images/products/product5.png" alt="T-shirt with Tape Details" class="product-card__image" />
+        </div>
+
+        <h3 class="product-card__name">
+          T-shirt with Tape Details
+        </h3>
+
+        <div class="product-card__rating">
+          <span class="product-card__stars">
+            ★★★★★
+          </span>
+
+          <span class="product-card__rating-value">
+            4.5/5
+          </span>
+        </div>
+
+        <div class="product-card__pricing">
+
+          <span class="product-card__price">
+            $120
+          </span>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="product-card">
+        <div class="product-card__image-wrapper">
+          <img src="/assets/images/products/product6.png" alt="T-shirt with Tape Details" class="product-card__image" />
+        </div>
+
+        <div class="product-card__content">
+          <h3 class="product-card__name">Skinny Fit Jeans</h3>
+
+          <div class="product-card__rating">
+            <span class="product-card__stars"> ★★★★★ </span>
+
+            <span class="product-card__rating-value"> 3.5/5 </span>
+          </div>
+
+          <div class="product-card__pricing">
+            <span class="product-card__price"> $240 </span>
+          </div>
+        </div>
+      </article>
+
+
+
+      <article class="product-card">
+        <div class="product-card_image-wrapper">
+          <img src="/assets/images/products/product7.png" alt="productimage"></img>
+        </div>
+
+        <div class="product-card__content">
+          <h3>CHECKERED SHIRT</h3>
+          <div class="product-card__rating">
+            <span class="product-card__stars"> ★★★★★ </span>
+            <span class="product-card__rating-value"> 4.5/5 </span>
+          </div>
+          <div class="product-card__pricing">
+            <span class="product-card__price"> $180 </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card_image-wrapper">
+          <img src="/assets/images/products/product8.png" alt="productimage"></img>
+        </div>
+
+        <div class="product-card__content">
+          <h3>Sleeve Stirped T-ShirtT</h3>
+          <div class="product-card__rating">
+            <span class="product-card__stars"> ★★★★★ </span>
+            <span class="product-card__rating-value"> 4.5/5 </span>
+          </div>
+          <div class="product-card__pricing">
+            <span class="product-card__price"> $180 </span>
+          </div>
+        </div>
+
+        <a href="">View all</a>
+
+
+    </div>
+  </section>
+
+
+
+  <section class="dress-style">
+
+    <div class="dress-style__container">
+
+      <h2 class="dress-style__title">
+        BROWSE BY DRESS STYLE
+      </h2>
+      <div class="dress-style__grid">
+
+        <article class="dress-style__card dress-style__card--casual">
+
+          <img src="/assets/images/style/casual.png" alt="Casual dress style" class="dress-style__image">
+
+
+        </article>
+
+
+        <article class="dress-style__card dress-style__card--formal">
+
+          <img src="/assets/images/style/formal.png" alt="Formal dress style" class="dress-style__image">
+
+
+        </article>
+
+
+        <article class="dress-style__card dress-style__card--party">
+
+          <img src="/assets/images/style/party.png" alt="Party dress style" class="dress-style__image">
+
+        </article>
+
+
+        <article class="dress-style__card dress-style__card--gym">
+
+          <img src="/assets/images/style/gym.png" alt="Gym dress style" class="dress-style__image">
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="testimonials">
+    <div class="testimonials__container">
+
+      <div class="testimonials__header">
+
+        <h2 class="testimonials__title">
+          OUR HAPPY CUSTOMERS
+        </h2>
+
+        <div class="testimonials__controls">
+
+          <button type="button" class="testimonials__control" aria-label="Previous reviews">
+            <img src="/assets/icons/right arrow.png" alt="" class="testimonials__control-icon"></button>
+
+          <button type="button" class="testimonials__control" aria-label="Next reviews">
+            <img src="/assets/icons/left arrow.png" alt="" class="testimonials__control-icon">
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+
+      <div class="testimonials_list">
+        <article class="testimonial-card">
+          <div class="testimonial-card__rating">
+            <p class="testimonial-card__stars">
+              ★★★★★
+            </p>
+          </div>
+
+          <div class="testimonial-card__customer">
+
+            <h3 class="testimonial-card__name">
+              Sarah M.
+            </h3>
+
+            <p class="testimonial-card__verified" aria-label="Verified customer">
+              ✓
+            </p>
+
+          </div>
+
+          <p class="testimonial-card__review">
+            "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant
+            dresses, every piece I've bought has exceeded my expectations.”
+          </p>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-card__rating">
+            <span class="testimonial-card__stars" aria-label="5 out of 5 stars">
+              ★★★★★
+            </span>
+          </div>
+
+          <div class="testimonial-card__customer">
+
+            <h3 class="testimonial-card__name">
+              Sarah M.
+            </h3>
+
+            <p class="testimonial-card__verified" aria-label="Verified customer">
+              ✓
+            </p>
+
+          </div>
+
+          <p class="testimonial-card__review">
+            "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant
+            dresses, every piece I've bought has exceeded my expectations.”
+          </p>
+
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-card__rating">
+            <span class="testimonial-card__stars" aria-label="5 out of 5 stars">
+              ★★★★★
+            </span>
+          </div>
+
+          <div class="testimonial-card__customer">
+
+            <h3 class="testimonial-card__name">
+              Sarah M.
+            </h3>
+
+            <p class="testimonial-card__verified" aria-label="Verified customer">
+              ✓
+            </p>
+
+          </div>
+
+          <p class="testimonial-card__review">
+            "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant
+            dresses, every piece I've bought has exceeded my expectations.”
+          </p>
+
+        </article>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="newsletter">
+
+    <div class="newsletter__container">
+
+      <h2 class="newsletter__title">
+        STAY UP TO DATE ABOUT
+        <br>
+        OUR LATEST OFFERS
+      </h2>
+
+
+      <form class="newsletter__form">
+
+        <label for="newsletter-email" class="newsletter__label">
+          Enter your email address
+        </label>
+
+        <input type="email" id="newsletter-email" name="email" class="newsletter__input"
+          placeholder="Enter your email address" required>
+
+        <button type="submit" class="newsletter__button">
+          Subscribe to Newsletter
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+</body>
+
+
+
+  <!-- =========================
+     FOOTER
+========================== -->
+
+
+
+<footer class="site-footer">
+
+  <div class="site-footer__container">
+
+    <!-- Footer Main Content -->
+
+    <div class="site-footer__main">
+
+      <!-- Brand -->
+      <div class="site-footer__brand">
+
+        <a href="index.html" class="site-footer__logo">
+          SHOP.CO
+        </a>
+
+        <p class="site-footer__description">
+          We have clothes that suit your style and
+          which you're proud to wear. From women to men.
         </p>
 
-        <button type="button" class="hero__cta-btn">Shop Now</button>
 
-        <div class="hero__statistics">
-          <div class="hero__stats">
-            <h3>200K+</h3>
-            <p>International Brands</p>
-          </div>
-          <div class="hero__stats">
-            <h3>2,000+</h3>
-            <p>High Quality Products</p>
-          </div>
-          <div class="hero__stats">
-            <h3>30,000+</h3>
-            <p>Happy Customers</p>
-          </div>
+        <!-- Social Media -->
+
+        <div class="site-footer__social">
+
+          <a href="#" class="site-footer__social-link" aria-label="Twitter">
+            <img src="/assets/icons/twitter.png" alt="">
+          </a>
+
+          <a href="#" class="site-footer__social-link" aria-label="Facebook">
+            <img src="/assets/icons/facebook.png" alt="">
+          </a>
+
+          <a href="#" class="site-footer__social-link" aria-label="Instagram">
+            <img src="/assets/icons/instagram.png" alt="">
+          </a>
+
+          <a href="#" class="site-footer__social-link" aria-label="GitHub">
+            <img src="/assets/icons/github.png" alt="">
+          </a>
+
         </div>
+
       </div>
 
-      <div class="hero-image">
-        <img
-          src="/assets/images/Rectangle 2.png"
-          alt="Hero Image "
-          class="hero__image"
-        />
+
+      <!-- Company -->
+
+      <nav class="site-footer__column">
+
+        <h2 class="site-footer__heading">
+          COMPANY
+        </h2>
+
+        <ul class="site-footer__links">
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              About
+            </a>
+          </li>
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              Features
+            </a>
+          </li>
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              Works
+            </a>
+          </li>
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              Career
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <!-- Help -->
+
+      <nav class="site-footer__column">
+
+        <h2 class="site-footer__heading">
+          HELP
+        </h2>
+
+        <ul class="site-footer__links">
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              Customer Support
+            </a>
+          </li>
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              Delivery Details
+            </a>
+          </li>
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              Terms & Conditions
+            </a>
+          </li>
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              Privacy Policy
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <!-- FAQ -->
+
+      <nav class="site-footer__column">
+
+        <h2 class="site-footer__heading">
+          FAQ
+        </h2>
+
+        <ul class="site-footer__links">
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              Account
+            </a>
+          </li>
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              Manage Deliveries
+            </a>
+          </li>
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              Orders
+            </a>
+          </li>
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              Payments
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <!-- Resources -->
+
+      <nav class="site-footer__column">
+
+        <h2 class="site-footer__heading">
+          RESOURCES
+        </h2>
+
+        <ul class="site-footer__links">
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              Free eBooks
+            </a>
+          </li>
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              Development Tutorial
+            </a>
+          </li>
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              How-To Blog
+            </a>
+          </li>
+
+          <li class="site-footer__item">
+            <a href="#" class="site-footer__link">
+              Youtube Playlist
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+
+    <!-- Footer Bottom -->
+
+    <div class="site-footer__bottom">
+
+      <p class="site-footer__copyright">
+        Shop.co © 2000-2025, All Rights Reserved
+      </p>
+
+
+      <div class="site-footer__payments">
+
+        <img src="/assets/images/payments/visa.png" alt="Visa" class="site-footer__payment">
+
+        <img src="/assets/images/payments/mastercard.png" alt="Mastercard" class="site-footer__payment">
+
+        <img src="/assets/images/payments/paypal.png" alt="PayPal" class="site-footer__payment">
+
+        <img src="/assets/images/payments/applepay.png" alt="Apple Pay" class="site-footer__payment">
+
+        <img src="/assets/images/payments/googlepay.png " class="site-footer__payment">
+
       </div>
-    </section>
 
-    <section class="brands-showing">
-      <div class="brands-showing__list">
-        <span class="brands-showing__item">
-          <img src="/assets/images/versace.png" alt="Brand 1" />
-        </span>
-        <span class="brands-showing__item">
-          <img src="/assets/images/zara.png" alt="Brand 2" />
-        </span>
-        <span class="brands-showing__item">
-          <img src="/assets/images/gucci.png" alt="Brand 3" />
-        </span>
-        <span class="brands-showing__item">
-          <img src="/assets/images/prada.png" alt="Brand 4" />
-        </span>
-        <span class="brands-showing__item">
-          <img src="/assets/images/calvinklein.png" alt="Brand 5" />
-        </span>
-      </div>
-    </section>
+    </div>
 
-    <section class="product-section">
-      <div class="product-section__container">
-        <h2>NEW ARRIVALS</h2>
+  </div>
 
-        <article class="product-card">
-          <h3 class="product-card__name">
-                            T-shirt with Tape Details
-                        </h3>
+</footer>
 
-                        <div class="product-card__rating">
-                            <span class="product-card__stars">
-                                ★★★★★
-                            </span>
-
-                            <span class="product-card__rating-value">
-                                4.5/5
-                            </span>
-                        </div>
-
-                        <div class="product-card__pricing">
-
-                            <span class="product-card__price">
-                                $120
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </a>
-        </article>
-
-        <article class="product-card">
-          <div class="product-card__image-wrapper">
-            <img
-              src="/assets/images/tshirt.png"
-              alt="T-shirt with Tape Details"
-              class="product-card__image"
-            />
-          </div>
-
-          <div class="product-card__content">
-            <h3 class="product-card__name">T-shirt with Tape Details</h3>
-
-            <div class="product-card__rating">
-              <span class="product-card__stars"> ★★★★★ </span>
-
-              <span class="product-card__rating-value"> 4.5/5 </span>
-            </div>
-
-            <div class="product-card__pricing">
-              <span class="product-card__price"> $120 </span>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card"></article>
-
-        <article class="product-card"></article>
-      </div>
-    </section>
-  </body>
 </html>

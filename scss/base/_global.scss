@@ -1,37 +1,38 @@
 @use "../abstracts/variables" as v;
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
-body{
-    font-family: v.$font;
-    color:v.$colorblack;
+body {
+  font-family: v.$font;
+  color: v.$colorblack;
 }
 
 // a{
 //     text-decoration: none;
 // }
 
-button,input{
-    font:inherit;
+button,
+input {
+  font: inherit;
 }
 
-button{
-    border:none;
-    background:none;
-    cursor:pointer;
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 img {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
