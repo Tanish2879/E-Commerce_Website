@@ -3,13 +3,17 @@
 // =========================================
 
 const productCards = document.querySelectorAll(".product-card");
+const isLoggedIn = localStorage.getItem("isLoggedIn");
 
 productCards.forEach((card) => {
-    card.addEventListener("click", () => {
-        const productId = card.id;
 
+    card.addEventListener("click", () => {
+        if (isLoggedIn !== "true") {
+            window.location.href = "login.html";
+        }else{
+        const productId = card.id;
         window.location.href = `product.html?id=${productId}`;
-    });
+    }});
 });
 
 

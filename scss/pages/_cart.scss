@@ -1,0 +1,48 @@
+.cart-page{
+    padding-left: 100px; 
+
+    &__breadcrumbs{
+        display: flex;
+        gap:10px;
+        font-size: 16px;
+        line-height: 100%;
+        font-weight: 400;
+        color: rgba(0,0,0,0.6);
+
+    }
+
+    &__breadcrumb{
+        text-decoration: none;
+    }
+
+}
+
+
+.cart__title{
+font-weight: 700;
+font-size: 40px;
+letter-spacing: 0%;
+margin-top: 24px;
+
+}
+
+.cart{
+
+    &__content{
+        margin-top: 24px;
+        width: 100%;
+        display: flex;
+
+    }
+    &__items{
+        width: 50%;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        padding: 15px;
+    }
+
+}
+
+.cart__item{
+    display: flex;
+}
