@@ -1,53 +1,66 @@
-// =========================================
-// CART
-// =========================================
+// PROTECT CART PAGE
 
-// Get cart from Local Storage
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+if (localStorage.getItem("isLoggedIn") !== "true") {
 
+    window.location.href = "login.html";
 
-// Get products from product.js
-const cartItemsContainer = document.querySelector(".cart__items");
+}
 
 
-// Order summary elements
-const subtotalElement = document.querySelector(
-    ".order-summary__row:nth-child(1) .order-summary__value"
-);
+// CART DATA
 
-const discountElement = document.querySelector(
-    ".order-summary__value--discount"
-);
+let cart =
+    JSON.parse(localStorage.getItem("cart")) || [];
 
-const deliveryElement = document.querySelector(
-    ".order-summary__row:nth-child(3) .order-summary__value"
-);
-
-const totalElement = document.querySelector(
-    ".order-summary__total-value"
-);
+let activeCoupon =
+    localStorage.getItem("coupon") || "";
 
 
-// =========================================
+// HTML ELEMENTS
+
+const cartItems =
+    document.querySelector(".cart-items");
+
+const summaryValues =
+    document.querySelectorAll(".order-summary__value");
+
+const totalElement =
+    document.querySelector(".order-summary__total-value");
+
+const couponForm =
+    document.querySelector(".order-summary__coupon");
+
+const couponInput =
+    document.querySelector("#coupon-code");
+
+const checkoutButton =
+    document.querySelector(".order-summary__checkout");
+
+
 // DISPLAY CART
-// =========================================
 
 function displayCart() {
 
-    cartItemsContainer.innerHTML = "";
+    cartItems.innerHTML = "";
+
+
+    // Empty cart
 
     if (cart.length === 0) {
 
-        cartItemsContainer.innerHTML = `
+        cartItems.innerHTML = `
             <p class="cart__empty">
                 Your cart is empty.
             </p>
         `;
 
         updateSummary();
+
         return;
     }
 
+
+    // Display every cart item
 
     cart.forEach((cartItem) => {
 
@@ -55,22 +68,29 @@ function displayCart() {
             (item) => item.id === cartItem.id
         );
 
+
         if (!product) {
             return;
         }
 
 
-        const item = document.createElement("article");
+        const item =
+            document.createElement("article");
 
         item.className = "cart-item";
 
+
         item.innerHTML = `
+
             <div class="cart-item__image">
+
                 <img
                     src="${product.image}"
                     alt="${product.name}"
                 >
+
             </div>
+
 
             <div class="cart-item__details">
 
@@ -88,6 +108,7 @@ function displayCart() {
 
             </div>
 
+
             <button
                 type="button"
                 class="cart-item__remove"
@@ -96,6 +117,7 @@ function displayCart() {
             >
                 🗑
             </button>
+
 
             <div class="cart-item__quantity">
 
@@ -107,9 +129,11 @@ function displayCart() {
                     −
                 </button>
 
+
                 <span class="cart-item__quantity-value">
                     ${cartItem.quantity}
                 </span>
+
 
                 <button
                     type="button"
@@ -123,7 +147,7 @@ function displayCart() {
         `;
 
 
-        cartItemsContainer.appendChild(item);
+        cartItems.appendChild(item);
 
     });
 
@@ -131,12 +155,11 @@ function displayCart() {
     addCartEvents();
 
     updateSummary();
+
 }
 
 
-// =========================================
-// QUANTITY + REMOVE BUTTONS
-// =========================================
+// QUANTITY AND REMOVE
 
 function addCartEvents() {
 
@@ -150,15 +173,20 @@ function addCartEvents() {
         document.querySelectorAll(".cart-item__remove");
 
 
+    // Increase
+
     increaseButtons.forEach((button) => {
 
         button.addEventListener("click", () => {
 
-            const id = Number(button.dataset.id);
+            const id =
+                Number(button.dataset.id);
 
-            const item = cart.find(
-                (cartItem) => cartItem.id === id
-            );
+            const item =
+                cart.find(
+                    (cartItem) => cartItem.id === id
+                );
+
 
             item.quantity++;
 
@@ -169,19 +197,27 @@ function addCartEvents() {
     });
 
 
+    // Decrease
+
     decreaseButtons.forEach((button) => {
 
         button.addEventListener("click", () => {
 
-            const id = Number(button.dataset.id);
+            const id =
+                Number(button.dataset.id);
 
-            const item = cart.find(
-                (cartItem) => cartItem.id === id
-            );
+            const item =
+                cart.find(
+                    (cartItem) => cartItem.id === id
+                );
+
 
             if (item.quantity > 1) {
+
                 item.quantity--;
+
             }
+
 
             saveCart();
 
@@ -189,16 +225,21 @@ function addCartEvents() {
 
     });
 
+
+    // Remove
 
     removeButtons.forEach((button) => {
 
         button.addEventListener("click", () => {
 
-            const id = Number(button.dataset.id);
+            const id =
+                Number(button.dataset.id);
+
 
             cart = cart.filter(
                 (cartItem) => cartItem.id !== id
             );
+
 
             saveCart();
 
@@ -209,51 +250,7 @@ function addCartEvents() {
 }
 
 
-// =========================================
-// UPDATE ORDER SUMMARY
-// =========================================
-
-function updateSummary() {
-
-    let subtotal = 0;
-
-    cart.forEach((cartItem) => {
-
-        const product = products.find(
-            (item) => item.id === cartItem.id
-        );
-
-        if (product) {
-            subtotal += product.price * cartItem.quantity;
-        }
-
-    });
-
-
-    const discount = subtotal * 0.20;
-
-    const deliveryFee = cart.length > 0 ? 15 : 0;
-
-    const total = subtotal - discount + deliveryFee;
-
-
-    subtotalElement.textContent =
-        `$${subtotal.toFixed(0)}`;
-
-    discountElement.textContent =
-        `-$${discount.toFixed(0)}`;
-
-    deliveryElement.textContent =
-        `$${deliveryFee}`;
-
-    totalElement.textContent =
-        `$${total.toFixed(0)}`;
-}
-
-
-// =========================================
 // SAVE CART
-// =========================================
 
 function saveCart() {
 
@@ -262,41 +259,226 @@ function saveCart() {
         JSON.stringify(cart)
     );
 
+
     displayCart();
+
 }
 
 
-// =========================================
-// COUPON
-// =========================================
+// CALCULATE TOTALS
 
-const couponForm =
-    document.querySelector(".order-summary__coupon");
+function updateSummary() {
 
-couponForm.addEventListener("submit", (event) => {
+    let subtotal = 0;
 
-    event.preventDefault();
 
-    const couponInput =
-        document.querySelector("#coupon-code");
+    cart.forEach((cartItem) => {
 
-    const coupon = couponInput.value.trim().toUpperCase();
+        const product =
+            products.find(
+                (item) => item.id === cartItem.id
+            );
 
-    if (coupon === "SAVE20") {
 
-        alert("Coupon applied!");
+        if (product) {
 
-    } else {
+            subtotal +=
+                product.price *
+                cartItem.quantity;
 
-        alert("Invalid coupon code.");
+        }
+
+    });
+
+
+    // Coupon discount
+
+    let discountRate = 0;
+
+
+    if (activeCoupon === "SAVE10") {
+
+        discountRate = 0.10;
 
     }
 
-});
+
+    if (activeCoupon === "SAVE20") {
+
+        discountRate = 0.20;
+
+    }
 
 
-// =========================================
-// INITIAL DISPLAY
-// =========================================
+    const discount =
+        subtotal * discountRate;
+
+
+    const deliveryFee =
+        cart.length > 0 ? 15 : 0;
+
+
+    const total =
+        subtotal -
+        discount +
+        deliveryFee;
+
+
+    // Update HTML
+
+    summaryValues[0].textContent =
+        `$${subtotal.toFixed(0)}`;
+
+
+    summaryValues[1].textContent =
+        `-$${discount.toFixed(0)}`;
+
+
+    summaryValues[2].textContent =
+        `$${deliveryFee}`;
+
+
+    totalElement.textContent =
+        `$${total.toFixed(0)}`;
+
+}
+
+
+// COUPON
+
+couponForm.addEventListener(
+    "submit",
+    (event) => {
+
+        event.preventDefault();
+
+
+        const coupon =
+            couponInput.value
+                .trim()
+                .toUpperCase();
+
+
+        if (
+            coupon === "SAVE10" ||
+            coupon === "SAVE20"
+        ) {
+
+            activeCoupon = coupon;
+
+
+            localStorage.setItem(
+                "coupon",
+                activeCoupon
+            );
+
+
+            updateSummary();
+
+
+            alert(
+                `${coupon} applied successfully.`
+            );
+
+        } else {
+
+            alert(
+                "Invalid coupon code. Use SAVE10 or SAVE20."
+            );
+
+        }
+
+    }
+);
+
+
+// CHECKOUT
+
+checkoutButton.addEventListener(
+    "click",
+    () => {
+
+        if (cart.length === 0) {
+
+            alert("Your cart is empty.");
+
+            return;
+        }
+
+
+        // Create popup
+
+        const popup =
+            document.createElement("div");
+
+        popup.className =
+            "checkout-popup";
+
+
+        popup.innerHTML = `
+
+            <div class="checkout-popup__content">
+
+                <h2>✓</h2>
+
+                <h3>
+                    Order Successful!
+                </h3>
+
+                <p>
+                    Your order has been placed successfully.
+                </p>
+
+                <button
+                    type="button"
+                    class="checkout-popup__button"
+                >
+                    OK
+                </button>
+
+            </div>
+
+        `;
+
+
+        document.body.appendChild(popup);
+
+
+        // Clear cart after OK
+
+        popup
+            .querySelector(
+                ".checkout-popup__button"
+            )
+            .addEventListener(
+                "click",
+                () => {
+
+                    cart = [];
+
+                    activeCoupon = "";
+
+
+                    localStorage.removeItem(
+                        "cart"
+                    );
+
+                    localStorage.removeItem(
+                        "coupon"
+                    );
+
+
+                    popup.remove();
+
+                    displayCart();
+
+                }
+            );
+
+    }
+);
+
+
+// START
 
 displayCart();

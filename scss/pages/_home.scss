@@ -46,7 +46,6 @@
     width: 100%;
     height: 100px;
     background-color: v.$colorwhite;
-    border-bottom: 2px solid #ff00a8;
 
     &__nav{
         display: flex;
@@ -97,9 +96,29 @@
     &__search{
         position: relative;
         flex: 1;
-        max-width: 415px;
-        margin-left: auto;
+        width: 550px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
+
+    }
+    &__search-input{
+        background-color: #f2f0f1;
+        border-radius: 30px;
+        width: 80%;
+        height: 40px;
+        border: none;
+        padding-left:52px ;
+    }
+
+    &__search-icon{
+        position: absolute;
+        left:80px;
+    }
+    &__actions{
+        display: flex;
+        gap: 15px;
     }
 
     
@@ -113,6 +132,7 @@
     position:relative;
     display: flex;
     width: 100%;
+    height: 600px;
     overflow: hidden;
     background-color: #f2f0f1;
 
@@ -182,7 +202,6 @@
             border-right: none;
         }
         h3{
-
             margin: 0;
             font-size: 30px;
             font-weight: 700;
@@ -222,6 +241,14 @@
         object-fit: contain;
         object-position: bottom right;
     }
+    // &__small-star{
+
+    // }
+    // &__big-star{
+
+
+
+    // }
 }
 
 
@@ -259,7 +286,7 @@
     &__title{
         position: absolute;
         top:60px;
-        font-weight: 700;
+        font-weight: 900;
         font-size: 48px;
         line-height: 100%;
         height: 50px;
@@ -297,7 +324,7 @@
     &__title{
         position: absolute;
         top:160px;
-        font-weight: 700;
+        font-weight: 900;
         font-size: 48px;
         line-height: 100%;
         height: 50px;
@@ -326,6 +353,9 @@
 
 .product-card{
     cursor: pointer;
+    &__stars{
+        color: #ffc633;
+    }
 }
 
 // style
