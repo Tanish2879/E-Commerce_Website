@@ -585,42 +585,42 @@
 
 }
 
-.newsletter__form {
+
+
+.newsletter {
+  &__form {
     width: 450px;
     margin-right: 64px;
     display: flex;
     flex-direction: column;
     gap: 7px;
-}
+  }
 
-.newsletter__label {
+  &__label {
     position: absolute;
     width: 1px;
     height: 1px;
     overflow: hidden;
-   
-}
-.newsletter__input {
+  }
+
+  &__input {
     width: 100%;
     height: 38px;
     padding: 0 14px;
     border: none;
     border-radius: 20px;
-
     background-color: #ffffff;
-
     font-size: 8px;
-
     outline: none;
-}
 
-.newsletter__input::placeholder {
-    color: #999999;
-    font-size: 12px;
-    padding-left: 5px;
-}
+    &::placeholder {
+      color: #999999;
+      font-size: 12px;
+      padding-left: 5px;
+    }
+  }
 
-.newsletter__button {
+  &__button {
     width: 100%;
     height: 38px;
     border: none;
@@ -629,181 +629,127 @@
     color: #000000;
     font-size: 12px;
     font-weight: 500;
-
     cursor: pointer;
-}
 
-.newsletter__button:hover {
-    background-color: #eeeeee;
+    &:hover {
+      background-color: #eeeeee;
+    }
+  }
 }
 
 
 .site-footer {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+  padding: 30px 0 15px;
+  background-color: #f2f0f1;
+  color: #000000;
 
-    padding: 30px 0 15px;
-
-    background-color: #f2f0f1;
-
-    color: #000000;
-}
-
-.site-footer__container {
+  &__container {
     width: calc(100% - 72px);
     max-width: 1180px;
-
     margin: 0 auto;
-}
+  }
 
-/* --------------------------------
-   Main Footer
--------------------------------- */
-
-.site-footer__main {
+  &__main {
     display: grid;
-
     grid-template-columns: 1.8fr repeat(4, 1fr);
-
     gap: 40px;
-
     padding-bottom: 25px;
-}
+  }
 
-/* --------------------------------
-   Brand
--------------------------------- */
-
-.site-footer__logo {
+  &__logo {
     display: inline-block;
-
     margin-bottom: 12px;
-
     color: #000000;
-
     font-size: 20px;
     font-weight: 900;
-
     text-decoration: none;
-}
+  }
 
-.site-footer__description {
+  &__description {
     max-width: 220px;
-
     margin: 0;
-
     color: #666666;
-
     font-size: 8px;
     line-height: 1.5;
-}
+  }
 
-/* --------------------------------
-   Social Icons
--------------------------------- */
-
-.site-footer__social {
+  &__social {
     display: flex;
-
     gap: 8px;
-
     margin-top: 15px;
-}
 
-.site-footer__social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: #ffffff;
 
-    width: 18px;
-    height: 18px;
+      img {
+        width: 10px;
+        height: 10px;
+        object-fit: contain;
+      }
+    }
+  }
 
-    border-radius: 50%;
-
-    background-color: #ffffff;
-}
-
-.site-footer__social-link img {
-    width: 10px;
-    height: 10px;
-
-    object-fit: contain;
-}
-
-/* --------------------------------
-   Footer Columns
--------------------------------- */
-
-.site-footer__column {
+  &__column {
     min-width: 0;
-}
+  }
 
-.site-footer__heading {
+  &__heading {
     margin: 0 0 14px;
-
     font-size: 9px;
     font-weight: 500;
     letter-spacing: 1px;
-}
+  }
 
-.site-footer__links {
+  &__links {
     display: flex;
-
     flex-direction: column;
-
     gap: 9px;
-
     margin: 0;
     padding: 0;
-
     list-style: none;
-}
+  }
 
-.site-footer__link {
+  &__link {
     color: #666666;
-
     font-size: 8px;
-
     text-decoration: none;
-}
 
-.site-footer__link:hover {
-    color: #000000;
-}
+    &:hover {
+      color: #000000;
+    }
+  }
 
-/* --------------------------------
-   Bottom Footer
--------------------------------- */
-
-.site-footer__bottom {
+  &__bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding-top: 15px;
-
     border-top: 1px solid #dddddd;
-}
+  }
 
-.site-footer__copyright {
+  &__copyright {
     margin: 0;
-
     color: #999999;
-
     font-size: 7px;
-}
+  }
 
-.site-footer__payments {
+  &__payments {
     display: flex;
     align-items: center;
     gap: 6px;
-}
+  }
 
-.site-footer__payment {
-   
+  &__payment {
     object-fit: contain;
-
     background-color: #ffffff;
-
     border-radius: 3px;
+  }
 }
