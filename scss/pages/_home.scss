@@ -27,7 +27,7 @@
         top:20%;
         right: 90px;
         bottom:30px;
-        color:white;
+        color:v.$colorwhite;
         width:20px;
         height:20px;
         cursor:pointer;
@@ -84,7 +84,7 @@
     &__link{
         display: flex;
         align-items: center;
-        color: #000000;
+        color:v.$colorblack;
         text-decoration: none;
 
         &:hover{
@@ -104,7 +104,7 @@
 
     }
     &__search-input{
-        background-color: #f2f0f1;
+        background-color:v.$colorhero;
         border-radius: 30px;
         width: 80%;
         height: 40px;
@@ -625,14 +625,14 @@
     height: 38px;
     border: none;
     border-radius: 20px;
-    background-color: #ffffff;
+    background-color: v.$colorhero;
     color: #000000;
     font-size: 12px;
     font-weight: 500;
     cursor: pointer;
 
     &:hover {
-      background-color: #eeeeee;
+      background-color: v.$colorwhite;
     }
   }
 }
@@ -642,7 +642,7 @@
   width: 100%;
   height: auto;
   padding: 30px 0 15px;
-  background-color: #f2f0f1;
+  background-color:v.$colorhero;
   color: #000000;
 
   &__container {
@@ -751,5 +751,200 @@
     object-fit: contain;
     background-color: #ffffff;
     border-radius: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-banner__text {
+    font-size: 10px;
+  }
+
+  .site-header__nav {
+    padding: 15px 16px;
+  }
+
+  .site-header__logo {
+    width: 90px;
+  }
+
+  .site-header__actions {
+    gap: 10px;
+  }
+
+  .site-header__actions img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .hero {
+    height: 650px;
+  }
+
+  .hero__content {
+    padding: 35px 20px;
+  }
+
+  .hero__title {
+    width: 100%;
+    font-size: 40px;
+    line-height: 0.95;
+    letter-spacing: -1.5px;
+  }
+
+  .hero__subtitle {
+    max-width: 100%;
+    padding-left: 0;
+    margin-top: 15px;
+  }
+
+  .hero__cta-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero__statistics {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 18px 0;
+  }
+
+  .hero__stats {
+    width: 50%;
+    padding: 0 12px;
+  }
+
+  .hero__stats:nth-child(2) {
+    border-right: none;
+  }
+
+  .hero__stats h3 {
+    font-size: 21px;
+  }
+
+  .hero-image img {
+    opacity: 0.45;
+  }
+
+  .brands-showing__list {
+    justify-content: center;
+  }
+
+  .brands-showing__item {
+    max-width: 95px;
+  }
+
+  .product-section,
+  .product-section2 {
+    padding: 0 16px;
+  }
+
+  .product-section__title,
+  .product-section2__title {
+    font-size: 30px;
+    margin-top: 40px;
+  }
+
+  .product-section__container,
+  .product-section2__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 12px;
+  }
+
+  .product-card__name,
+  .product-card h3 {
+    font-size: 14px;
+  }
+
+  .product-card__rating {
+    font-size: 12px;
+  }
+
+  .product-card__stars {
+    font-size: 14px;
+  }
+
+  .dress-style__container {
+    width: calc(100% - 32px);
+    margin: 30px auto;
+    padding: 22px 14px;
+  }
+
+  .dress-style__title {
+    font-size: 22px;
+  }
+
+  .dress-style__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 170px);
+  }
+
+  .dress-style__card--casual,
+  .dress-style__card--formal,
+  .dress-style__card--party,
+  .dress-style__card--gym {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .dress-style__name {
+    top: 15px;
+    left: 18px;
+    font-size: 16px;
+  }
+
+  .testimonials__container {
+    width: calc(100% - 32px);
+  }
+
+  .testimonials__title {
+    font-size: 28px;
+  }
+
+  .testimonials__controls {
+    gap: 6px;
+  }
+
+  .testimonial-card {
+    width: 280px;
+    min-width: 280px;
+    height: auto;
+    min-height: 220px;
+    padding: 22px;
+  }
+
+  .newsletter__container {
+    margin: 0 16px;
+    padding: 25px 20px;
+  }
+
+  .newsletter__title {
+    font-size: 26px;
+  }
+
+  .site-footer {
+    padding-top: 25px;
+  }
+
+  .site-footer__container {
+    width: calc(100% - 32px);
+  }
+
+  .site-footer__main {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 15px;
+  }
+
+  .site-footer__description {
+    max-width: 280px;
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .site-footer__payments {
+    flex-wrap: wrap;
   }
 }
