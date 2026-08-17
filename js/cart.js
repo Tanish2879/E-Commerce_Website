@@ -16,7 +16,6 @@ const checkoutButton = document.querySelector(".order-summary__checkout");
 
 function displayCart() {
     cartItems.innerHTML = "";
-    // Empty cart
     if (cart.length === 0) {
         cartItems.innerHTML = `
             <p class="cart__empty">
@@ -26,8 +25,7 @@ function displayCart() {
         updateSummary();
         return;
     }
-    // Display every cart item
-    cart.forEach((cartItem) => {
+\    cart.forEach((cartItem) => {
         const product = products.find(
             (item) => item.id === cartItem.id
         );
@@ -95,14 +93,12 @@ function displayCart() {
 }
 
 
-// QUANTITY AND REMOVE
 
 function addCartEvents() {
     const increaseButtons = document.querySelectorAll(".increase");
     const decreaseButtons = document.querySelectorAll(".decrease");
     const removeButtons = document.querySelectorAll(".cart-item__remove");
 
-    // Increase
     increaseButtons.forEach((button) => {
         button.addEventListener("click", () => {
             const id = Number(button.dataset.id);
@@ -112,7 +108,6 @@ function addCartEvents() {
         });
     });
 
-    // Decrease
     decreaseButtons.forEach((button) => {
         button.addEventListener("click", () => {
             const id = Number(button.dataset.id);
@@ -126,7 +121,6 @@ function addCartEvents() {
     });
 
 
-    // Remove
     removeButtons.forEach((button) => {
         button.addEventListener("click", () => {
             const id = Number(button.dataset.id);
@@ -138,14 +132,12 @@ function addCartEvents() {
 
 }
 
-// SAVE CART
 function saveCart() {
     localStorage.setItem("cart",JSON.stringify(cart));
     displayCart();
 
 }
 
-// CALCULATE TOTALS
 function updateSummary() {
     let subtotal = 0;
     cart.forEach((cartItem) => {
@@ -157,7 +149,6 @@ function updateSummary() {
 
     });
 
-    // Coupon discount
     let discountRate = 0;
     if (activeCoupon === "SAVE10") {
         discountRate = 0.10;
@@ -171,7 +162,6 @@ function updateSummary() {
     const deliveryFee = cart.length > 0 ? 15 : 0;
     const total = subtotal - discount + deliveryFee;
 
-    // Update HTML
 
     summaryValues[0].textContent = `$${subtotal.toFixed(0)}`;
     summaryValues[1].textContent = `-$${discount.toFixed(0)}`;
@@ -181,7 +171,7 @@ function updateSummary() {
 }
 
 
-// COUPON
+
 couponForm.addEventListener("submit",(event) => {
         event.preventDefault();
         const coupon = couponInput.value.trim().toUpperCase();
@@ -202,7 +192,7 @@ couponForm.addEventListener("submit",(event) => {
 );
 
 
-// CHECKOUT
+
 checkoutButton.addEventListener(
     "click",
     () => {
@@ -210,7 +200,6 @@ checkoutButton.addEventListener(
             alert("Your cart is empty.");
             return;
         }
-        // Create popup
         const popup = document.createElement("div");
         popup.className ="checkout-popup";
         popup.innerHTML = `
@@ -231,8 +220,7 @@ checkoutButton.addEventListener(
         `;
         document.body.appendChild(popup);
 
-        // Clear cart after OK
-
+\
         popup.querySelector(".checkout-popup__button").addEventListener("click",() => {
             cart = [];activeCoupon = "";
              localStorage.removeItem("cart");
@@ -245,6 +233,5 @@ checkoutButton.addEventListener(
     }
 );
 
-// START
 
 displayCart();
