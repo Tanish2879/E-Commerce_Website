@@ -1,4 +1,6 @@
-@use "../abstracts/variables.scss" as v;
+@use "../abstracts/variables.scss" as *;
+@use "../abstracts/mixins.scss" as *;
+
 
 
 .product-page{
@@ -10,7 +12,7 @@
         font-size: 16px;
         line-height: 100%;
         font-weight: 400;
-        color: rgba(0,0,0,0.6);
+        color: $colorblack;
 
     }
 
@@ -53,7 +55,7 @@
 
     }
     &__stars{
-        color: #ffc633;
+        color: $color-star;
         font-size: 25px;
     }
     &__rating-value{
@@ -72,7 +74,7 @@
        font-weight: 400;
         font-size: 16px;
         line-height: 22px;
-        color: rgba(0,0,0,0.6);
+        color: $colorblack;
         margin-top: 20px;
     }
 
@@ -83,12 +85,10 @@
     }
     &__quantity{
         width: 150px;
-         display: flex;
-         align-items: center;
-        justify-content: space-between;
+        @include Flex-between;
         width: 140px;
         padding: 8px 15px;
-        background-color: #F0EEED;
+        background-color: $color-product-option;
         border-radius: 20px;
         font-size: 20px;
         cursor: pointer;
@@ -96,9 +96,9 @@
     }
 
     &__add-button{
-        background-color: v.$colorblack;
+        background-color: $colorblack;
         width: 400px;
-        color: v.$colorwhite;
+        color: $colorwhite;
         border-radius: 60px;
         padding:15px;
         font-weight: 500;

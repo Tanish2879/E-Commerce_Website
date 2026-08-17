@@ -1,3 +1,6 @@
+@use "../abstracts/variables.scss" as *;
+@use "../abstracts/mixins.scss" as *;
+
 .cart-page {
   padding-left: 100px;
 
@@ -7,7 +10,7 @@
     font-size: 16px;
     line-height: 1;
     font-weight: 400;
-    color: rgba(0, 0, 0, 0.6);
+    color: $colorblack
   }
 
   &__breadcrumb {
@@ -31,9 +34,9 @@
   }
 
   &__items {
+
     flex: 1;
-    min-width: 0;
-    border: 1px solid #ddd;
+    border: 1px solid $color-border;
     border-radius: 12px;
     padding: 15px;
   }
@@ -41,7 +44,7 @@
   &__empty {
     padding: 40px;
     text-align: center;
-    color: #777;
+    color: $color-text-muted;
   }
 }
 
@@ -52,6 +55,7 @@
   display: flex;
   gap: 20px;
   padding: 15px;
+  width: 700px;
 
   &__image {
     width: 100px;
@@ -80,10 +84,10 @@
   &__option {
     margin: 2px 0;
     font-size: 11px;
-    color: #777;
+    color: $color-text-muted;
 
     span {
-      color: #333;
+      color: $colordark;
     }
   }
 
@@ -99,7 +103,7 @@
     right: 5px;
     border: none;
     background: transparent;
-    color: #ff3333;
+    color: $color-danger;
     font-size: 14px;
     cursor: pointer;
   }
@@ -113,7 +117,7 @@
     gap: 15px;
     padding: 7px 12px;
     border-radius: 20px;
-    background-color: #f0f0f0;
+    background-color: $color-light-gray;
 
     &-button {
       border: none;
@@ -132,7 +136,7 @@
   width: 380px;
   height: fit-content;
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid $color-border;
   border-radius: 12px;
 
   &__title {
@@ -141,30 +145,28 @@
   }
 
   &__row {
-    display: flex;
-    justify-content: space-between;
+    @include Flex-between;
     margin-bottom: 15px;
     font-size: 14px;
   }
 
   &__label {
-    color: #777;
+    color: $color-text-muted;
   }
 
   &__value {
     font-weight: 500;
 
     &--discount {
-      color: #ff3333;
+      color: $color-danger;
     }
   }
 
   &__total {
-    display: flex;
-    justify-content: space-between;
+    @include Flex-between;
     margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid $color-border;
 
     &-label {
       font-size: 15px;
@@ -191,7 +193,7 @@
       padding: 10px 15px;
       border: none;
       border-radius: 20px;
-      background-color: #f0f0f0;
+      background-color: $color-light-gray;
       outline: none;
     }
 
@@ -200,7 +202,7 @@
       border: none;
       border-radius: 20px;
       background-color: #000;
-      color: #fff;
+      color: $colorwhite;
       cursor: pointer;
     }
   }
@@ -212,7 +214,7 @@
     border: none;
     border-radius: 25px;
     background-color: #000;
-    color: #fff;
+    color: $colorwhite;
     cursor: pointer;
   }
 }

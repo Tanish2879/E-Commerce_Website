@@ -191,9 +191,7 @@ couponForm.addEventListener("submit",(event) => {
 
 
 
-checkoutButton.addEventListener(
-    "click",
-    () => {
+checkoutButton.addEventListener("click",() => {
         if (cart.length === 0) {
             alert("Your cart is empty.");
             return;
