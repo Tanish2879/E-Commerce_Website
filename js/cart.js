@@ -57,7 +57,6 @@ function displayCart() {
                 type="button"
                 class="cart-item__remove"
                 data-id="${product.id}"
-                aria-label="Remove ${product.name}"
             >
                 🗑
             </button>
