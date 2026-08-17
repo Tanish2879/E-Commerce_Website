@@ -25,15 +25,14 @@ function displayCart() {
         updateSummary();
         return;
     }
-\    cart.forEach((cartItem) => {
+        cart.forEach((cartItem) => {
         const product = products.find(
             (item) => item.id === cartItem.id
         );
         if (!product) {
             return;
         }
-        const item =
-        document.createElement("article");
+        const item = document.createElement("article");
         item.className = "cart-item";
         item.innerHTML = `
             <div class="cart-item__image">
@@ -220,7 +219,6 @@ checkoutButton.addEventListener(
         `;
         document.body.appendChild(popup);
 
-\
         popup.querySelector(".checkout-popup__button").addEventListener("click",() => {
             cart = [];activeCoupon = "";
              localStorage.removeItem("cart");
