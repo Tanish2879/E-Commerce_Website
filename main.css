@@ -276,6 +276,7 @@ img {
 }
 .product-section a {
   position: absolute;
+  text-decoration: none;
   top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -307,6 +308,7 @@ img {
 }
 .product-section2 a {
   position: absolute;
+  text-decoration: none;
   top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
