@@ -108,6 +108,31 @@
 
 }
 
+@media (max-width: 1200px) {
+  .product-page {
+    padding: 0 40px;
+  }
+
+  .product-details {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .product-details__image-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-details__image {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-details__add-button {
+    width: auto;
+    flex: 1;
+  }
+}
 
 @media (max-width: 768px) {
   .product-page {

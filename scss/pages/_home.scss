@@ -1,20 +1,19 @@
-@use "../abstracts/variables.scss" as v;
+@use "../abstracts/variables.scss" as *;
+@use "../abstracts/mixins.scss" as *;
 
 .signup-banner{
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include Flex-center;
     width:100%;
     min-height: 28px;
-    background-color: v.$colorblack;
-    color:v.$colorwhite;
+    background-color: $colorblack;
+    color:$colorwhite;
     &__text{
         font-size:12px;
 
     }
     &__link{
-        color:v.$colorwhite;
+        color:$colorwhite;
         text-decoration: underline;
         &:hover{
             opacity: 0.75;
@@ -27,7 +26,7 @@
         top:20%;
         right: 90px;
         bottom:30px;
-        color:v.$colorwhite;
+        color:$colorwhite;
         width:20px;
         height:20px;
         cursor:pointer;
@@ -45,11 +44,10 @@
 .site-header{
     width: 100%;
     height: 100px;
-    background-color: v.$colorwhite;
+    background-color: $colorwhite;
 
     &__nav{
-        display: flex;
-        align-items: center;
+      @include Flex-center;
         justify-content: space-between;
         height: 100%;
         margin: 0 100px 0 100px;
@@ -84,7 +82,7 @@
     &__link{
         display: flex;
         align-items: center;
-        color:v.$colorblack;
+        color:$colorblack;
         text-decoration: none;
 
         &:hover{
@@ -104,7 +102,7 @@
 
     }
     &__search-input{
-        background-color:v.$colorhero;
+        background-color:$colorhero;
         border-radius: 30px;
         width: 80%;
         height: 40px;
@@ -150,7 +148,7 @@
         height: auto;
         line-height:0.85;
         margin:0;
-        color: v.$colorblack;
+        color: $colorblack;
         font-size: 64px;
         font-weight: 900;
         letter-spacing: -2.5px;
@@ -168,8 +166,8 @@
     }
 
     &__cta-btn{
-        background-color: v.$colorblack;
-        color: v.$colorwhite;
+        background-color: $colorblack;
+        color: $colorwhite;
         width: 26%;
         height: 40px;
         border-radius: 55px;
@@ -234,10 +232,8 @@
 
     img {
         display: block;
-
         width: 100%;
         height: 100%;
-
         object-fit: contain;
         object-position: bottom right;
     }
@@ -257,30 +253,23 @@
     width: 100%;
     border: 2px solid black;
     height: 122px;
-    background-color: v.$colorblack;
+    background-color: $colorblack;
     display: flex;
     align-items: center;
 
     &__list{
         width: 100%;
-        display: flex;
-        align-items: center;
+        @include Flex-center;
         justify-content: space-evenly;
         // padding: 44px 100px;
-
     }
 }
 
 
 
-//product cards 
-
-
 .product-section{
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include Flex-center;
     position: relative;
 
     &__title{
@@ -295,9 +284,7 @@
 
 
     &__container{
-
-        display: flex;
-        align-items: center;
+        @include Flex-center;
         justify-content: space-evenly;
         margin-top: 140px;
         gap:25px;
@@ -316,9 +303,7 @@
 
 .product-section2{
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include Flex-center;
     position: relative;
 
     &__title{
@@ -334,8 +319,7 @@
 
     &__container{
 
-        display: flex;
-        align-items: center;
+        @include Flex-center;
         justify-content: space-evenly;
         margin-top: 240px;
         gap:25px;
@@ -358,7 +342,6 @@
     }
 }
 
-// style
 
 .dress-style {
     width: 100%;
@@ -387,43 +370,49 @@
 
     &__grid {
         display: grid;
-        /* FIXED: Changed from 108px to 190px or 240px so models/dresses are actually visible */
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 240px); 
-        gap: 16px; /* Slightly wider gap looks cleaner for cards */
+        gap: 16px; 
     }
 
     &__card {
         position: relative;
-        width: 100%;       /* FIXED: Forces card to fill its grid slot width */
-        height: 100%;      /* FIXED: Forces card to fill its grid slot height */
+        width: 100%;       
+        height: 100%;     
         overflow: hidden;
-        border-radius: 12px; /* Standard card curve */
+        border-radius: 12px; 
         background-color: #ffffff;
         
-        /* Modifiers integrated inside the nesting */
         &--casual {
             grid-column: 1;
             grid-row: 1;
-            .dress-style__image { object-position: center 20%; } /* Higher crop for portrait look */
+            .dress-style__image {
+               object-position: center 20%;
+               } 
         }
 
         &--formal {
             grid-column: 2 / 4;
             grid-row: 1;
-            .dress-style__image { object-position: center 30%; } /* Wide landscape card crop */
+            .dress-style__image {
+               object-position: center 30%;
+               } 
         }
 
         &--party {
             grid-column: 1 / 3;
             grid-row: 2;
-            .dress-style__image { object-position: center 30%; } /* Wide landscape card crop */
+            .dress-style__image {
+               object-position: center 30%;
+               } 
         }
 
         &--gym {
             grid-column: 3;
             grid-row: 2;
-            .dress-style__image { object-position: center 15%; } /* Higher crop for vertical fitness photos */
+            .dress-style__image {
+               object-position: center 15%;
+               } 
         }
     }
 
@@ -434,18 +423,18 @@
         width: 100%;
         height: 100%;
         display: block;
-        object-fit: cover; /* Keeps aspect ratio clean */
+        object-fit: cover;
         z-index: 1;
     }
 
     &__name {
         position: absolute;
-        top: 20px;   /* Clean padding from top */
-        left: 24px;  /* Clean padding from left */
+        top: 20px;   
+        left: 24px;  
         z-index: 2;
         margin: 0;
         color: #000000;
-        font-size: 18px; /* Slightly larger for design hierarchy */
+        font-size: 18px; 
         font-weight: 700;
         line-height: 1;
         pointer-events: none;
@@ -463,14 +452,13 @@
 
     }
     &__header{
-        display: flex;
-        align-items: center;
+        @include Flex-center;
         justify-content: space-between;
     }
 
     &__title{
         margin:0;
-        color:v.$colorblack;
+        color:$colorblack;
         font-size: 48px;
         font-weight: 900;
         line-height: 1;
@@ -493,8 +481,7 @@
 }
 
 .testimonials_list{
-        display: flex;
-        align-items: center;
+        @include Flex-center;
         justify-content: space-between;
         gap: 20px;
         margin-top: 40px;
@@ -533,16 +520,10 @@
     
     color: #ffffff;
     background-color: #00a67d;
-
     width: 12px;
     height: 12px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    @include Flex-center;
     border-radius: 50%;
-
     font-size: 8px;
 
     }
@@ -556,7 +537,6 @@
 
 }
 
-
 .newsletter{
     width: 100%;
     height: 300px;
@@ -565,12 +545,11 @@
         width: auto;
         height: 180px;
         margin: 0 100px 0 100px;
-        background-color: v.$colorblack;
-        color: v.$colorwhite;
+        background-color: $colorblack;
+        color: $colorwhite;
         border-radius: 30px;
         padding: 43px 0 43px 64px;
-        display: flex;
-        align-items: center;
+        @include Flex-center;
         justify-content: space-between;
         gap: 200px;
     }
@@ -625,14 +604,14 @@
     height: 38px;
     border: none;
     border-radius: 20px;
-    background-color: v.$colorhero;
+    background-color: $colorhero;
     color: #000000;
     font-size: 12px;
     font-weight: 500;
     cursor: pointer;
 
     &:hover {
-      background-color: v.$colorwhite;
+      background-color: $colorwhite;
     }
   }
 }
@@ -642,7 +621,7 @@
   width: 100%;
   height: auto;
   padding: 30px 0 15px;
-  background-color:v.$colorhero;
+  background-color:$colorhero;
   color: #000000;
 
   &__container {
@@ -681,9 +660,7 @@
     margin-top: 15px;
 
     &-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include Flex-center;
       width: 18px;
       height: 18px;
       border-radius: 50%;
@@ -728,8 +705,7 @@
   }
 
   &__bottom {
-    display: flex;
-    align-items: center;
+    @include Flex-center;
     justify-content: space-between;
     padding-top: 15px;
     border-top: 1px solid #dddddd;
